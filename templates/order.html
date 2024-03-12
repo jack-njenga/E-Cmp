@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Order</title>
+		<link rel="stylesheet" href="../static/styles/common.css" />
+		<link rel="stylesheet" href="../static/styles/header.css">
+		<link rel="stylesheet" href="../static/styles/main-order.css">
+		<link rel="stylesheet" href="../static/styles/footer.css">
+
+	</head>
+	<body>
+		<header>
+			<section id="header">
+
+				<div class="menu-div">
+					<div class="menu">
+						<img id="menu-icon" onclick="toggleMenu()" src="../static/images/menu-2.svg" alt="">
+						<div id="menu-container" class="menu-container">
+							<div id="menu-nav" class="menu-nav">
+								<h3>Menu</h3>
+								<ul class="menu-links">
+									<li><a href="#">All Categories </a></li>
+									<li><a href="#">All Products </a></li>
+									<li><a href="#">About Us</a></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo-name">
+						<a href="">
+							<img id="logo-icon" src="../static/images/comapany-logo.jpg" alt="">
+						</a>
+					</div>
+				</div>
+
+				<div class="search">
+					<div class="search-bar">
+						<input id="search-input" type="text">
+						<img id="search-icon" src="../static/images/search-icon.svg" alt="">
+					</div>
+				</div>
+
+				<div class="account">
+					<div class="profile">
+						<div id="profile-div" class="profile-menu" onclick="toggleAccMenu()">
+							<img id="profile-icon" src="../static/images/profile-icon.svg" alt="">
+							<p id="profile-name">Account</p>
+						</div>
+						<div id="profile-container" class="profile-container">
+								<div id="profile-nav" class="profile-nav">
+									<h3>Account</h3>
+									<ul class="profile-links">
+										<li><a href="#">Sign In</a></li>
+										<li><a href="#">Register</a></li>
+										<li><a href="#">My Orders</a></li>
+										<li><a href="#">My Account</a></li>
+									</ul>
+								</div>
+						</div>
+					</div>
+					<div class="cart">
+						<a href="#">
+							<img id="cart-icon" src="../static/images/cart-icon.svg" alt="">
+						</a>
+						<span id="cart-items">2</span>
+					</div>
+				</div>
+			</section>
+		</header>
+
+
+		<!-- main body -->
+		<main>
+
+			<section class="order">
+
+				<div class="order-container">
+						<div class="order-heading">
+								<h2>Order <strong>#001</strong></h2>
+								<div class="order-descrption">
+										<p><strong>3</strong> Items</p>
+										<p>Places on 12-02-2024</p>
+										<p>Delivery Place: Kimbo, Matangi, Biashara, 'Rurii'</p>
+										<p>Delivery Fee: <strong>600</strong></p>
+										<p>Total: <strong>Ksh 1, 900.00</strong></p>
+										<p>Status: <strong>Pay on Delivery</strong></p>
+									</div>
+						</div>
+
+						<div class="order-item-container">
+
+							<div class="oder-item">
+								<div class="item-info">
+									<div class="item-img">
+										<img src="../static/images/transistor-1.jpeg" alt="">
+									</div>
+									<div class="item-details">
+										<p>Microphone Sensor</p>
+										<p id="item-description">High Sensitivity Sound Microphone Sensor Detection Module for Arduino AVR PIC</p>
+										<p>Quantity: <strong>2</strong></p>
+										<p>Total: <strong>600</strong></p>
+									</div>
+								</div>
+								<div class="item-track">
+									<div class="track">
+										<div class="order-placed">
+											<p>Order Placed</p>
+											<div class="st-sp">
+												<span class="start"></span>
+											</div>
+										</div>
+										<div class="processing">
+											<p>Processing</p>
+											<div class="st-sp">
+												<span class="start"></span>
+											</div>
+										</div>
+										<div class="on-the-way">
+											<p>On The Way</p>
+											<div class="st-sp">
+												<span class="start"></span>
+											</div>
+										</div>
+										<div class="completed">
+											<p>Completed</p>
+											<div class="st-sp">
+												<span class="start"></span>
+											</div>
+										</div>
+									</div>
+
+									<div class="track-details">
+										<p>Estimated Delivery Date: <strong>12-02-2024</strong></p>
+										<p>Time: 2:30 PM</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="oder-item">
+								<div class="item-info">
+									<div class="item-img">
+										<img src="../static/images/transistor-1.jpeg" alt="">
+									</div>
+									<div class="item-details">
+										<p>Microphone Sensor</p>
+										<p id="item-description">High Sensitivity Sound Microphone 
+											Sensor Detection Module for Arduino AVR PIC High Sensitivity Sound Microphone 
+											Sensor Detection Module for Arduino AVR PI</p>
+										<p>Quantity: <strong>2</strong></p>
+										<p>Total: <strong>600</strong></p>
+									</div>
+								</div>
+								<div class="item-track">
+									<div class="track">
+										<div class="order-placed">
+											<p>Order Placed</p>
+											<div class="st-sp">
+												<span class="start"></span>
+											</div>
+										</div>
+										<div class="processing">
+											<p>Processing</p>
+											<div class="st-sp">
+												<span class="start"></span>
+											</div>
+										</div>
+										<div class="on-the-way">
+											<p>On The Way</p>
+											<div class="st-sp">
+												<span class="start"></span>
+											</div>
+										</div>
+										<div class="completed">
+											<p>Completed</p>
+											<div class="st-sp">
+												<span class="start"></span>
+											</div>
+										</div>
+									</div>
+
+									<div class="track-details">
+										<p>Estimated Delivery Date: <strong>12-02-2024</strong></p>
+										<p>Time: 2:30 PM</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="oder-item">
+								<div class="item-info">
+									<div class="item-img">
+										<img src="../static/images/transistor-1.jpeg" alt="">
+									</div>
+									<div class="item-details">
+										<p>Microphone Sensor</p>
+										<p id="item-description">High Sensitivity Sound Microphone 
+											Sensor Detection Module for Arduino AVR PIC High Sensitivity Sound Microphone 
+											Sensor Detection Module for Arduino AVR PI</p>
+										<p>Quantity: <strong>2</strong></p>
+										<p>Total: <strong>600</strong></p>
+									</div>
+								</div>
+								<div class="item-track">
+									<div class="track">
+										<div class="order-placed">
+											<p>Order Placed</p>
+											<div class="st-sp">
+												<span class="start"></span>
+											</div>
+										</div>
+										<div class="processing">
+											<p>Processing</p>
+											<div class="st-sp">
+												<span class="start"></span>
+											</div>
+										</div>
+										<div class="on-the-way">
+											<p>On The Way</p>
+											<div class="st-sp">
+												<span class="start"></span>
+											</div>
+										</div>
+										<div class="completed">
+											<p>Completed</p>
+											<div class="st-sp">
+												<span class="start"></span>
+											</div>
+										</div>
+									</div>
+
+									<div class="track-details">
+										<p>Estimated Delivery Date: <strong>12-02-2024</strong></p>
+										<p>Time: 2:30 PM</p>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+
+			</section>
+
+		
+			<!-- ==== img design ==== -->
+			<style>
+				div.img-design {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding-top: 10px;
+				}
+				div.img-design img {
+					width: 90%;
+				}
+			</style>
+			<div class="img-design">
+				<!-- <img src="../static/images/order-page.jpg" alt=""> -->
+			</div>
+			<!-- ==== img design end ==== -->
+
+
+			<section class="categories-section">
+				<div class="categories-container">
+					<span id="left-scroll"><</span>
+
+					<div class="category"><a href="#">Arduino</a></div>
+					<div class="category"><a href="#">Acceptor</a></div>
+					<div class="category"><a href="#">Boards</a></div>
+					<div class="category"><a href="#">Bluetooth Modules</a></div>
+
+					<div class="category"><a href="#">Connectors</a></div>
+					<div class="category"><a href="#">Crystals & Oscillators</a></div>
+					<div class="category"><a href="#">Digital Timer</a></div>
+					<div class="category"><a href="#">Displays</a></div>
+					<div class="category"><a href="#">Motors</a></div>
+					<div class="category"><a href="#">MP3 Modules</a></div>
+					<div class="category"><a href="#">Sensors</a></div>
+					<div class="category"><a href="#">Potentiometers</a></div>
+					<div class="category"><a href="#">Thermoelectric Modules</a></div>
+					<div class="category"><a href="#">Solenoid Valve</a></div>
+					<div class="category"><a href="#">Raspberry Pi</a></div>
+					<div class="category"><a href="#">Water Flow Sensors</a></div>
+					<div class="category"><a href="#">
+						Wifi Modules</a></div>
+					<div class="category"><a href="#">Water Pump</a></div>
+					<div class="category"><a href="#">Water Float Sensors</a></div>
+					<div class="category"><a href="#">
+						Water Flow Sensors</a></div>
+					<div class="category"><a href="#">Wires and Cables</a></div>
+					<div class="category"><a href="#">XBEE Modules</a></div>
+					<span id="right-scroll">></span>
+				</div>
+			</section>
+				
+		</main>
+
+		<!-- footer -->
+		<footer>
+			<section class="footer">
+				<div class="info">
+					<div class="info-links">
+						<li><a href="#">ABOUT US</a></li>
+						<li><a href="#">CONTACT US</a></li>
+						<li><a href="#">RETURN POLICY</a></li>
+						<li><a href="#">PRIVACY POLICY</a></li>
+						<li><a href="#">TERMS AND CONDITIONS</a></li>
+					</div>
+					<div class="short-info">
+						<p>Your best online electronic components shop 
+							in Kenya and East Africa Specializing in all 
+							types of electronic components & gadgets of 
+							all shape and sizes.</p>
+					</div>
+				</div>
+				<div class="terms">
+					<div class="follow-us">
+						<!-- <p>Follow Us</p> -->
+						<a href="https://x.com/" target="_blank">
+							<img src="../static/images/x.svg" alt="twiter icon">
+						</a>
+						<a href="https://www.facebook.com/" target="_blank">
+							<img src="../static/images/fb.svg" alt="fb icon">
+						</a>
+						<a href="https://www.instagram.com/" target="_blank">
+							<img src="../static/images/ig.svg" alt="ig icon">
+						</a>
+						<a href="https://www.linkedin.com/" target="_blank">
+							<img src="../static/images/linkedin.svg" alt="linked in icon">
+						</a>
+						<a href="https://www.tiktok.com/" target="_blank">
+							<img src="../static/images/tiktok.svg" alt="tiktok icon">
+						</a>
+					</div>
+					<div class="terms-conditions">
+						<a id="p-p" href="#">privacy policy</a>
+						<a id="c-p" href="#">&copy; 2024 JD Tech, Juja</a>
+						<a id="a-r-r" href="#">allrightsreverved</a>
+					</div>
+				</div>
+			</section>
+		</footer>
+	</body>
+<script src="../static/scripts/header.js"></script>
+<script src="../static/scripts/main.js"></script>
+</html>
+

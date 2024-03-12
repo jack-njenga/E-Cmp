@@ -1,0 +1,88 @@
+
+:root {
+
+    /* body background gradient */
+    --body-gradient: linear-gradient(rgb(239, 255, 253), white, rgb(217, 241, 255));
+
+    /* ====== header configs ====== */
+    --header-bg-color: #000000;
+    --red: red;
+
+    /* headings */
+    --heading-clr: rgb(255, 115, 0);
+    --heading-size: 20px;
+
+    /* ===== all border configs ===== */
+    --border-global: 1px solid gray;
+    --border-global-faded: 1px solid rgb(185, 185, 185);
+
+    /* ====== ad section configs ====== */
+    --ad-text-color: rgb(0, 0, 0);
+    --ad-img-size: 200px;
+
+    /* ===== values section configs ====== */
+    --svg-size: 100px;
+    --svg-size-mobile: 70px;
+    --svg-text-size: 18px;
+    --svg-text-size-mobile: 14px;
+    --svg-text-clr: rgb(38, 121, 0);
+
+
+    /* ======  products (major) section ========*/
+    --product-img-size: 250px;
+    --product-text-size: 18px;
+    --product-text-size-mobile: 18px;
+    --product-text-clr: black;
+
+    /* ===== categories scroll section config ===== */
+    --scroll-height: none; /* not implemented */
+    --scroll-elements-text-size: 14px; /* not implemented */
+
+    /* ==== inputs configs */
+    --input-background: rgb(215, 253, 253);
+    --input-bg-clr: rgb(227, 227, 255);
+
+    /* ====== price filter section config ====== */
+    --btn-clr: rgb(0, 128, 0);
+    --btn-clr-hover: rgb(60, 255, 0);
+
+    /* ===== @product section config ===== */
+    --product-name-size: large;
+    --product-desc-size: 17px;
+
+}
+
+::-webkit-scrollbar {
+    background: rgb(255, 255, 255);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--input-bg-clr);
+    border-radius: 20px;
+}
+
+@media (max-width) {
+    ::-webkit-scrollbar {
+        background: rgb(255, 255, 255);
+        width: 0px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--input-bg-clr);
+        border-radius: 20px;
+    }
+}
+
+
+html {
+    font-family: "Exo 2", sans-serif;
+    font-style: normal;
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    height: 100vh;
+}

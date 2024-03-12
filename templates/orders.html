@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Orders</title>
+		<link rel="stylesheet" href="../static/styles/common.css" />
+		<link rel="stylesheet" href="../static/styles/header.css">
+		<link rel="stylesheet" href="../static/styles/main-orders.css">
+		<link rel="stylesheet" href="../static/styles/footer.css">
+
+	</head>
+	<body>
+		<header>
+			<section id="header">
+
+				<div class="menu-div">
+					<div class="menu">
+						<img id="menu-icon" onclick="toggleMenu()" src="../static/images/menu-2.svg" alt="">
+						<div id="menu-container" class="menu-container">
+							<div id="menu-nav" class="menu-nav">
+								<h3>Menu</h3>
+								<ul class="menu-links">
+									<li><a href="#">All Categories </a></li>
+									<li><a href="#">All Products </a></li>
+									<li><a href="#">About Us</a></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo-name">
+						<a href="">
+							<img id="logo-icon" src="../static/images/comapany-logo.jpg" alt="">
+						</a>
+					</div>
+				</div>
+
+				<div class="search">
+					<div class="search-bar">
+						<input id="search-input" type="text">
+						<img id="search-icon" src="../static/images/search-icon.svg" alt="">
+					</div>
+				</div>
+
+				<div class="account">
+					<div class="profile">
+						<div id="profile-div" class="profile-menu" onclick="toggleAccMenu()">
+							<img id="profile-icon" src="../static/images/profile-icon.svg" alt="">
+							<p id="profile-name">Account</p>
+						</div>
+						<div id="profile-container" class="profile-container">
+								<div id="profile-nav" class="profile-nav">
+									<h3>Account</h3>
+									<ul class="profile-links">
+										<li><a href="#">Sign In</a></li>
+										<li><a href="#">Register</a></li>
+										<li><a href="#">My Orders</a></li>
+										<li><a href="#">My Account</a></li>
+									</ul>
+								</div>
+						</div>
+					</div>
+					<div class="cart">
+						<a href="#">
+							<img id="cart-icon" src="../static/images/cart-icon.svg" alt="">
+						</a>
+						<span id="cart-items">2</span>
+					</div>
+				</div>
+			</section>
+		</header>
+
+
+		<!-- main body -->
+		<main>
+
+			<section class="orders">
+				<div class="orders-container">
+					<div class="orders-heading">
+						<h2>My Orders</h2>
+					</div>
+					<div class="my-orders-container">
+						<a href="http://192.168.100.70:5001/order" class="at-order">
+							<div class="order-info">
+								<div class="order-number">
+									<h4>Order</h4>
+									<p><Strong>#003</Strong></p>
+								</div>
+								<div class="order-item-number">
+									<p>Total Items</p>
+									<p><strong>6</strong></p>
+								</div>
+								<div class="order-amount">
+									<p>Total Amount</p>
+									<p><strong>Ksh 1, 900.00</strong></p>
+								</div>
+								<div class="order-date">
+									<p>Placed On Date of Placement</p>
+									<p><strong>12-12-2024</strong>(10:24 AM)</p>
+								</div>
+								
+							</div>
+							<div class="order-status">
+								<h4>Status</h4>
+								<p><Strong>Completed</Strong></p>
+								<div class="rating-container">
+									<div class="rating">
+										<div id="rate-1"><span>&star;</span></div>
+										<div id="rate-2"><span>&star;</span></div>
+										<div id="rate-3"><span>&star;</span></div>
+										<div id="rate-4"><span>&star;</span></div>
+										<div id="rate-5" onclick="fiveStar()"><span>&star;</span></div>
+									</div>
+									<p id="rate-us">Rate Our Services</p>
+								</div>
+							</div>
+							<script>
+								function fiveStar () {
+									alert(":) Thanks for rating us '5 star'");
+								}
+							</script>
+						</a>
+
+						<a href="#" class="at-order">
+							<div class="order-info">
+								<div class="order-number">
+									<h4>Order</h4>
+									<p><Strong>#003</Strong></p>
+								</div>
+								<div class="order-item-number">
+									<p>Total Items</p>
+									<p><strong>6</strong></p>
+								</div>
+								<div class="order-amount">
+									<p>Total Amount</p>
+									<p><strong>Ksh 1, 900.00</strong></p>
+								</div>
+								<div class="order-date">
+									<p>Placed On Date of Placement</p>
+									<p><strong>12-12-2024</strong>(10:24 AM)</p>
+								</div>
+								
+							</div>
+							<div class="order-status">
+								<h4>Status</h4>
+								<p><Strong>Completed</Strong></p>
+								<div class="rating-container">
+									<div class="rating">
+										<div id="rate-1"><span>&star;</span></div>
+										<div id="rate-2"><span>&star;</span></div>
+										<div id="rate-3"><span>&star;</span></div>
+										<div id="rate-4"><span>&star;</span></div>
+										<div id="rate-5"><span>&star;</span></div>
+									</div>
+									<p id="rate-us">Rate Our Services</p>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+      </section>
+		
+			<!-- ==== img design ==== -->
+			<style>
+				div.img-design {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding-top: 10px;
+				}
+				div.img-design img {
+					width: 90%;
+				}
+			</style>
+			<div class="img-design">
+				<!-- <img src="../static/images/orders-page.jpg" alt=""> -->
+			</div>
+			<!-- ==== img design end ==== -->
+
+
+			<section class="categories-section">
+				<div class="categories-container">
+					<span id="left-scroll"><</span>
+
+					<div class="category"><a href="#">Arduino</a></div>
+					<div class="category"><a href="#">Acceptor</a></div>
+					<div class="category"><a href="#">Boards</a></div>
+					<div class="category"><a href="#">Bluetooth Modules</a></div>
+
+					<div class="category"><a href="#">Connectors</a></div>
+					<div class="category"><a href="#">Crystals & Oscillators</a></div>
+					<div class="category"><a href="#">Digital Timer</a></div>
+					<div class="category"><a href="#">Displays</a></div>
+					<div class="category"><a href="#">Motors</a></div>
+					<div class="category"><a href="#">MP3 Modules</a></div>
+					<div class="category"><a href="#">Sensors</a></div>
+					<div class="category"><a href="#">Potentiometers</a></div>
+					<div class="category"><a href="#">Thermoelectric Modules</a></div>
+					<div class="category"><a href="#">Solenoid Valve</a></div>
+					<div class="category"><a href="#">Raspberry Pi</a></div>
+					<div class="category"><a href="#">Water Flow Sensors</a></div>
+					<div class="category"><a href="#">
+						Wifi Modules</a></div>
+					<div class="category"><a href="#">Water Pump</a></div>
+					<div class="category"><a href="#">Water Float Sensors</a></div>
+					<div class="category"><a href="#">
+						Water Flow Sensors</a></div>
+					<div class="category"><a href="#">Wires and Cables</a></div>
+					<div class="category"><a href="#">XBEE Modules</a></div>
+					<span id="right-scroll">></span>
+				</div>
+			</section>
+				
+		</main>
+
+		<!-- footer -->
+		<footer>
+			<section class="footer">
+				<div class="info">
+					<div class="info-links">
+						<li><a href="#">ABOUT US</a></li>
+						<li><a href="#">CONTACT US</a></li>
+						<li><a href="#">RETURN POLICY</a></li>
+						<li><a href="#">PRIVACY POLICY</a></li>
+						<li><a href="#">TERMS AND CONDITIONS</a></li>
+					</div>
+					<div class="short-info">
+						<p>Your best online electronic components shop 
+							in Kenya and East Africa Specializing in all 
+							types of electronic components & gadgets of 
+							all shape and sizes.</p>
+					</div>
+				</div>
+				<div class="terms">
+					<div class="follow-us">
+						<!-- <p>Follow Us</p> -->
+						<a href="https://x.com/" target="_blank">
+							<img src="../static/images/x.svg" alt="twiter icon">
+						</a>
+						<a href="https://www.facebook.com/" target="_blank">
+							<img src="../static/images/fb.svg" alt="fb icon">
+						</a>
+						<a href="https://www.instagram.com/" target="_blank">
+							<img src="../static/images/ig.svg" alt="ig icon">
+						</a>
+						<a href="https://www.linkedin.com/" target="_blank">
+							<img src="../static/images/linkedin.svg" alt="linked in icon">
+						</a>
+						<a href="https://www.tiktok.com/" target="_blank">
+							<img src="../static/images/tiktok.svg" alt="tiktok icon">
+						</a>
+					</div>
+					<div class="terms-conditions">
+						<a id="p-p" href="#">privacy policy</a>
+						<a id="c-p" href="#">&copy; 2024 JD Tech, Juja</a>
+						<a id="a-r-r" href="#">allrightsreverved</a>
+					</div>
+				</div>
+			</section>
+		</footer>
+	</body>
+<script src="../static/scripts/header.js"></script>
+<script src="../static/scripts/main.js"></script>
+</html>
+

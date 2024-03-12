@@ -1,0 +1,199 @@
+
+main {
+    display: block;
+    width: 100%;
+    margin-top: 100px;
+    background-image: var(--body-gradient);
+}
+
+/* ====== orders  ======= */
+
+section.orders {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* section.orders * {
+  border: 1px solid gray;
+} */
+div.orders-heading {
+  padding: 20px 0px 0px 10px;
+}
+div.my-orders-container {
+  width: 100%;
+}
+a.at-order {
+  min-width: 1000px;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: start;
+
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+  padding: 10px;
+  margin: 5px;
+}
+a.at-order:hover {
+  box-shadow: 0px 3px 5px black;
+}
+a.at-order strong {
+  color: var(--red);
+}
+div.order-info > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px;
+  border-bottom: 1px solid rgb(187, 187, 187);
+}
+div.order-info > div:last-child {
+  border-bottom: none;
+}
+div.order-info > div.order-number {
+  padding: 5px 10px;
+}
+div.order-info > div p:first-child {
+  padding: 0px 10px;
+}
+div.order-info > div p:last-child {
+  padding: 1px 10px;
+}
+
+div.order-status {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  border-left: 1px solid gray;
+}
+div.order-status strong {
+  color: green;
+  padding: 5px 5px;
+}
+div.rating-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: small;
+  /* display: none; */
+  cursor: auto;
+  
+}
+div.rating {
+  width: 95%;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 3px 10px;
+  background: linear-gradient(90deg, white, black 10% 90%, white);
+}
+div.rating > div span {
+  cursor: pointer;
+  font-size: 17px;
+  -webkit-text-stroke: 3px rgb(253, 135, 0);
+}
+#rate-us {
+  margin: 0px;
+  font-size: smaller;
+}
+@media (max-width: 1000px) {
+  a.at-order {
+    min-width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  a.at-order {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    
+    box-shadow: 0px 3px 5px black;
+  }
+  div.order-info > div {
+    font-size: small;
+    margin: 5px;
+  }
+  
+  div.order-status {
+    border-left: none;
+    border-top: 1px solid gray;
+  }
+}
+
+/* ====== orders end  ======= */
+
+/* ------ category scroll ------ */
+
+section.categories-section {
+    background-color: rgb(255, 255, 255);
+    margin-top: 30px;
+    width: 100%;
+    max-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 5px;
+  }
+  div.categories-container {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    background-color: var(--input-background);
+  }
+  span#left-scroll, span#right-scroll {
+    color: var(--heading-clr);
+    font-weight: bolder;
+    font-size: 30px;
+    position: sticky;
+    top: 0px;
+    padding: 15px 40px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(0.5px);
+  }
+  span#left-scroll {
+    left: 0px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.1));
+  }
+  span#right-scroll {
+    right: 0px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 1));
+  }
+  
+  div.category {
+    padding: 5px;
+  }
+  div.category a {
+    width: max-content;
+    border: var(--border-global);
+    border-radius: 7px;
+    background-color: var(--input-bg-clr);
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    font-size: large;
+    color: black;
+  }
+  
+  @media (max-width: 600px) {
+    span#left-scroll, span#right-scroll {
+      padding: 10px 15px;
+    }
+    div.category a {
+      padding: 15px;
+      font-size: medium;
+    }
+  }
+  
+  /* ----- category scroll end ------- */
