@@ -16,13 +16,13 @@
 
         <div class="menu-div">
           <div class="menu">
-            <img id="menu-icon" onclick="toggleMenu()" src="../static/images/menu-2.svg" alt="">
+            <img id="menu-icon" menu-icon src="../static/images/menu-2.svg" alt="">
             <div id="menu-container" class="menu-container">
               <div id="menu-nav" class="menu-nav">
                 <h3>Menu</h3>
                 <ul class="menu-links">
+                  <li><a href="#">Shop</a></li>
                   <li><a href="#">All Categories </a></li>
-                  <li><a href="#">All Products </a></li>
                   <li><a href="#">About Us</a></li>
                   <li><a href="#">Contact Us</a></li>
                 </ul>
@@ -37,15 +37,22 @@
         </div>
 
         <div class="search">
-          <div class="search-bar">
-            <input id="search-input" type="text">
-            <img id="search-icon" src="../static/images/search-icon.svg" alt="">
+          <form class="search-bar" action="">
+            <input id="search-input" search-input-data type="text" required>
+            <button type="submit" search-btn ><img id="search-icon" src="../static/images/search-icon.svg" alt=""></button>
+          </form>
+          <div class="search-items-container" search-items-container>
+            <ul class="loaded-items" loaded-items>
+              <li ><a href="#">Audrinos</a></li>
+              <li ><a href="#">Audio Sensors</a></li>
+              <li ><a href="#">Audio Sensors Audio Sensor Audio Sensor Audio Sensor</a></li>
+            </ul>
           </div>
         </div>
 
         <div class="account">
           <div class="profile">
-            <div id="profile-div" class="profile-menu" onclick="toggleAccMenu()">
+            <div id="profile-div" class="profile-menu" profile-div>
               <img id="profile-icon" src="../static/images/profile-icon.svg" alt="">
               <p id="profile-name">Account</p>
             </div>
@@ -55,17 +62,17 @@
                   <ul class="profile-links">
                     <li><a href="#">Sign In</a></li>
                     <li><a href="#">Register</a></li>
-                    <li><a href="#">My Orders</a></li>
+                    <li><a href="http://192.168.100.70:5001/orders">My Orders</a></li>
                     <li><a href="#">My Account</a></li>
                   </ul>
                 </div>
             </div>
           </div>
           <div class="cart">
-            <a href="#">
+            <a href="http://192.168.100.70:5001/cart">
               <img id="cart-icon" src="../static/images/cart-icon.svg" alt="">
             </a>
-            <span id="cart-items">2</span>
+            <span id="cart-items" cartItemCount>2</span>
           </div>
         </div>
       </section>
@@ -84,10 +91,10 @@
                 </a>
             </div>
             <div class="my-cart">
-                <div class="-cart-">
+                <div class="-cart-" -cart- >
                     <h2>My Cart </h2>
-                    <div class="item-container">
-                        <div class="total-items">Total Items : (<span id="total-items"></span>) </div>
+                    <div class="total-items">Total Items : (<span id="total-items"></span>) </div>
+                    <div class="item-container" cart-item-container>
                         <div id="-id-1" class="at-item">
                             <div class="item-img">
                                 <a href="#">
@@ -103,21 +110,21 @@
                                         AVR PIC <br> High Sensitivity Sound Microphone 
                                         Sensor Detection Module for Arduino AVR PIC
                                     </p>
-                                    <p>@ <strong class="price-each">Ksh 100</strong></p>
+                                    <p>@ <strong class="price-each" price-each>Ksh 100</strong></p>
                                     
                                 </div>
                                 <div class="item-subtotal">
                                     <p>SubTotal :</p>
-                                    <p><strong class="sub-total"></strong></p>                            
+                                    <p><strong class="sub-total" sub-total></strong></p>                            
                                 </div>
                                 <div class="item-quantity">
                                     <p>Quantity</p>
                                     <div class="item-quantity-count">
-                                        <span class="minus">-</span>
-                                        <p class="qty">2</p>
-                                        <span class="plus">+</span>
+                                        <span class="minus" minus>-</span>
+                                        <p class="qty" qty>2</p>
+                                        <span class="plus" plus>+</span>
                                     </div>
-                                    <button id="cancel-item" onclick="removeItem('-id-1')">Remove Item</button>
+                                    <button id="cancel-item" remove-btn>Remove Item</button>
                                 </div>
                             </div>
                         </div>
@@ -139,21 +146,21 @@
                                         Sensor Detection Module for Arduino 
                                         AVR PIC
                                     </p>
-                                    <p>@ <strong class="price-each">Ksh 100</strong></p>
+                                    <p>@ <strong class="price-each" price-each>Ksh 100</strong></p>
                                     
                                 </div>
                                 <div class="item-subtotal">
                                     <p>SubTotal :</p>
-                                    <p><strong class="sub-total"></strong></p>                            
+                                    <p><strong class="sub-total" sub-total></strong></p>                            
                                 </div>
                                 <div class="item-quantity">
                                     <p>Quantity</p>
                                     <div class="item-quantity-count">
-                                        <span class="minus">-</span>
-                                        <p class="qty">4</p>
-                                        <span class="plus">+</span>
+                                      <span class="minus" minus>-</span>
+                                      <p class="qty" qty>3</p>
+                                      <span class="plus" plus>+</span>
                                     </div>
-                                    <button id="cancel-item" onclick="removeItem('-id-2')">Remove Item</button>
+                                    <button id="cancel-item" remove-btn>Remove Item</button>
                                 </div>
                             </div>
                         </div>
@@ -169,33 +176,34 @@
                                     <p>
                                         High Sensitivity Sound Microphone
                                     </p>
-                                    <p>@ <strong class="price-each">Ksh 100</strong></p>
+                                    <p>@ <strong class="price-each" price-each>Ksh 100</strong></p>
                                     
                                 </div>
                                 <div class="item-subtotal">
                                     <p>SubTotal :</p>
-                                    <p><strong class="sub-total"></strong></p>                            
+                                    <p><strong class="sub-total" sub-total></strong></p>                            
                                 </div>
                                 <div class="item-quantity">
                                     <p>Quantity</p>
                                     <div class="item-quantity-count">
-                                        <span class="minus">-</span>
-                                        <p class="qty">2</p>
-                                        <span class="plus">+</span>
+                                      <span class="minus" minus>-</span>
+                                      <p class="qty" qty>4</p>
+                                      <span class="plus" plus>+</span>
                                     </div>
-                                    <button id="cancel-item" onclick="removeItem('-id-3')">Remove Item</button>
+                                    <button id="cancel-item" remove-btn>Remove Item</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="summary-info">
+                <div class="summary-info" summary-info>
+                  <form action="">
                     <div class="delivery-info">
                         <h3>Delivery Details</h3>
                         <div class="delivery-location">
                             <h4>Choose Your Delivery Location</h4>
-                            <select name="County" id="">
+                            <select name="county" id="" required>
                                 <option value="County">County</option>
                                 <option value="Kiambu">Kiambu</option>
                                 <option value="Nairobi">Nairobi</option>
@@ -203,21 +211,21 @@
                                 <option value="Nairobi">Nyeri</option>
                                 <option value="Nairobi">Kirinyanga</option>
                             </select>
-                            <select name="Loaction" id="">
-                                <option value="Location">Location</option>
+                            <select name="Loaction" id="" required>
+                                <option value="Location">Sub County</option>
                                 <option value="Juja">Juja</option>
                                 <option value="Thika">Thika</option>
                                 <option value="Kimbo">Kimbo</option>
                             </select>
-                            <input type="text" id="" placeholder="Specific Location">
+                            <input type="text" id="" placeholder="Specific Location" required>
                         </div>
                         
                         <div class="delivery-fees">
                             <h4>Delivery Fee</h4>
-                            <p id="delivery-price">Ksh 0</p>
+                            <p id="delivery-price" deliver-fee fee="200">Ksh 200</p>
                         </div>
                         <div class="no-delivery">
-                            <input type="checkbox" id="exampleCheckbox" name="exampleCheckbox">
+                            <input type="checkbox" id="exampleCheckbox" storePickUp name="storePickUp">
                             <p>Pick Up at Our Store @ <strong>Ksh 0.00</strong></p>
                         </div>
                         <div class="delivery-date">
@@ -237,9 +245,10 @@
                             <p><strong id="total-price-all">Ksh 1, 900.00</strong></p>
                         </div>
                         <div class="proceed-payment">
-                            <button><a href="http://192.168.100.70:5001/checkout">Proceed To Pay</a></button>
+                            <button action="submit"><a href="http://192.168.100.70:5001/checkout">Proceed To Pay</a></button>
                         </div>
                     </div>
+                  </form>
                 </div>
             </div>
         </section>
@@ -325,8 +334,8 @@
       </section>
     </footer>
   </body>
-<script src="../static/scripts/header.js"></script>
+<script src="../static/scripts/header.js" type="module"></script>
 <script src="../static/scripts/main.js"></script>
-<script src="../static/scripts/cart.js"></script>
+<script src="../static/scripts/cart.js" type="module"></script>
 </html>
 

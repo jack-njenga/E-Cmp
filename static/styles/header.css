@@ -1,10 +1,13 @@
 
+/* header * {
+  border: 1px solid gray;
+} */
 
 
 header {
   width: 100%;
   max-height: 100px;
-  background-color: var(--header-bg-color);
+  background-color: rgb(0, 0, 0); /* var(--header-bg-color) */
   position: fixed;
   top: 0;
   z-index: 99;
@@ -92,16 +95,30 @@ div.logo-name {
   align-items: center;
   justify-content: space-evenly;
 }
-div.search {
+.search {
   width: 50%;
   background-color: white;
   border-radius: 10px;
+
+  position: relative;
 }
-div.search-bar {
+.search button {
+  border: none;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 0px 20px;
+  background-color: var(--input-bg-clr);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.search button:hover {
+  background-color: var(--header-btn-hover-clr);
+}
+.search-bar {
   display: flex;
   justify-content: space-between;
   border-radius: 10px;
-
 }
 #search-input {
   width: 100%;
@@ -114,17 +131,56 @@ div.search-bar {
   font-size: large;
 }
 #search-icon {
-  border-radius: 10px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding: 0px 20px;
-  background-color: var(--input-bg-clr);
-  cursor: pointer;
-  transition: background-color 0.3s;
+  /* width: 100%; */
+  max-width: 32px;
+  max-height: 32px;
 }
-#search-icon:hover {
-  background-color: rgb(255, 166, 166);
+
+.search-items-container {
+  display: none;
+  width: 100%;
+  /* min-height: 100px; */
+  max-height: 300px;
+  overflow-y: scroll;
+  border-radius: 5px;
+
+  position: absolute;
+  margin-top: 3px;
+
+  background: rgba(218, 220, 255, 0.774);
+  backdrop-filter: blur(2px);
+
 }
+.search-items-container.active {
+  display: inherit;
+}
+
+ul.loaded-items {
+  list-style: none;
+  padding: 5px;
+}
+
+ul.loaded-items li {
+  
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+}
+
+ul.loaded-items li a {
+  padding: 10px;
+  min-width: 100%;
+  border-radius: 5px;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+ul.loaded-items li a:hover {
+  background: rgba(255, 175, 175, 0.8);
+}
+
+
 div.account {
   width: 15%;
   display: flex;
@@ -140,8 +196,9 @@ div.profile-menu {
   cursor: pointer;
 }
 #profile-name {
+  display: none;
   color: white;
-  font-size: large;
+  /* font-size: large; */
 }
 
 /* --------- toggle profile menu --------- */
@@ -256,14 +313,30 @@ div.cart:hover span {
     width: 95px;
     margin: 10px 10px 10px 20px;
   }
-  div.search-bar {
-    width: 85%;
+  .search {
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+    
+    position: inherit;
+  }
+  .search-bar {
+    width: 83%;
     display: flex;
     justify-content: center;
     border-radius: 10px;
     position: absolute;
-    bottom: 5px;
-    left: 55px;
+    bottom: 3px;
+    left: 58px;
+  }
+  .search-items-container {
+
+    width: 380px;
+  
+    position: absolute;
+    top: 95px;
+    right: 5%;
+    align-self: center;
   }
 
   div.account {
@@ -283,7 +356,7 @@ div.cart:hover span {
   div.cart {
     display: flex;
     align-items: center;
-    padding: 5px 6px 0px 6px;
+    padding: 3px 0px 0px 0px;
     position: relative;
     cursor: pointer;
   }

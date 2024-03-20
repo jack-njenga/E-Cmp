@@ -1,33 +1,10 @@
+import { Header } from "./components/header.js";
+import { Search } from "./components/search.js";
 
-let menuIcon = document.getElementById("menu-icon");
-let menuContainer = document.getElementById("menu-container");
-let menuNav = document.getElementById("menu-nav");
+const header = new Header()
+const search = new Search();
 
-console.log(menuNav)
-function toggleMenu() {
-  menuContainer.classList.toggle("active");
-}
-document.addEventListener("click", function (event) {
-  if (!menuIcon.contains(event.target) &&
-    menuContainer.contains(event.target) &&
-    !menuNav.contains(event.target)
-  ) {
-    event.stopPropagation();
-    menuContainer.classList.remove("active");
-  }
-});
-let profileDiv = document.getElementById("profile-div");
-let profileContainer = document.getElementById("profile-container");
-let profileNav = document.getElementById("profile-nav");
+header.activate();
+search.searchFilter("[search-input-data]");
+search.search("[search-btn]");
 
-function toggleAccMenu() {
-  profileContainer.classList.toggle("active");
-}
-document.addEventListener("click", function (event) {
-  if (!profileDiv.contains(event.target) &&
-    profileContainer.contains(event.target) &&
-    !profileNav.contains(event.target)
-  ) {
-    profileContainer.classList.remove("active");
-  }
-});

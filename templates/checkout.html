@@ -16,15 +16,15 @@
 
         <div class="menu-div">
           <div class="menu">
-            <img id="menu-icon" onclick="toggleMenu()" src="../static/images/menu-2.svg" alt="">
+            <img id="menu-icon" menu-icon src="../static/images/menu-2.svg" alt="">
             <div id="menu-container" class="menu-container">
               <div id="menu-nav" class="menu-nav">
                 <h3>Menu</h3>
                 <ul class="menu-links">
-                  <li><a href="#">All Categories </a></li>
-                  <li><a href="#">All Products </a></li>
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="http://192.168.100.70:5001/shop">Shop</a></li>
+                  <li><a href="http://192.168.100.70:5001/category">All Categories </a></li>
+                  <li><a href="http://192.168.100.70:5001/aboutus">About Us</a></li>
+                  <li><a href="http://192.168.100.70:5001/contactus">Contact Us</a></li>
                 </ul>
               </div>
             </div>
@@ -37,15 +37,22 @@
         </div>
 
         <div class="search">
-          <div class="search-bar">
-            <input id="search-input" type="text">
-            <img id="search-icon" src="../static/images/search-icon.svg" alt="">
+          <form class="search-bar" action="">
+            <input id="search-input" search-input-data type="text" required>
+            <button type="submit" search-btn ><img id="search-icon" src="../static/images/search-icon.svg" alt=""></button>
+          </form>
+          <div class="search-items-container" search-items-container>
+            <ul class="loaded-items" loaded-items>
+              <li ><a href="#">Audrinos</a></li>
+              <li ><a href="#">Audio Sensors</a></li>
+              <li ><a href="#">Audio Sensors Audio Sensor Audio Sensor Audio Sensor</a></li>
+            </ul>
           </div>
         </div>
 
         <div class="account">
           <div class="profile">
-            <div id="profile-div" class="profile-menu" onclick="toggleAccMenu()">
+            <div id="profile-div" class="profile-menu" profile-div>
               <img id="profile-icon" src="../static/images/profile-icon.svg" alt="">
               <p id="profile-name">Account</p>
             </div>
@@ -55,17 +62,17 @@
                   <ul class="profile-links">
                     <li><a href="#">Sign In</a></li>
                     <li><a href="#">Register</a></li>
-                    <li><a href="#">My Orders</a></li>
-                    <li><a href="#">My Account</a></li>
+                    <li><a href="http://192.168.100.70:5001/orders">My Orders</a></li>
+                    <li><a href="http://192.168.100.70:5001/account">My Account</a></li>
                   </ul>
                 </div>
             </div>
           </div>
           <div class="cart">
-            <a href="#">
+            <a href="http://192.168.100.70:5001/cart">
               <img id="cart-icon" src="../static/images/cart-icon.svg" alt="">
             </a>
-            <span id="cart-items">2</span>
+            <span id="cart-items" cartItemCount >2</span>
           </div>
         </div>
       </section>
@@ -164,7 +171,7 @@
               </div>
             </div>
 
-            <div class="mpesa-paybill-option" style="display: none;">
+            <div class="mpesa-paybill-option" style="display: inherit;">
               <div class="payment-directions">
                 <h4>Mpesa Paybill</h4>
                 <p>
@@ -309,7 +316,7 @@
       </section>
     </footer>
   </body>
-<script src="../static/scripts/header.js"></script>
+<script src="../static/scripts/header.js" type="module"></script>
 <script src="../static/scripts/main.js"></script>
 </html>
 

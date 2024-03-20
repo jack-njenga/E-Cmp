@@ -1,0 +1,30 @@
+app/
+├── static/
+│   ├── images/
+│   ├── styles/
+│   │   ├── main.css
+│   │   ├── components/
+│   │   │   ├── button.css
+│   │   │   └── ...
+│   │   └── ...
+│   └── scripts/
+│       ├── main.js # applys to all pages
+|       |__ item.js # applys to item page 
+|       |__ cart.js # applys to cart page
+|       |
+│       ├── components/
+│       │   ├── cart.js # cart feature
+│       │   ├── product.js
+│       │   └── ...
+│       └── services/
+|           |__ Api/
+|           |   |__ core.js
+│           |   └── api.js
+|           └── Storage/
+|               └── storage.js         
+│       
+└── templates/
+    ├── home.html
+    ├── product.html
+    ├── cart.html
+    └── ...
