@@ -1,0 +1,76 @@
+{% extends "Jd/main.html" %}
+
+{% block meta %} {% endblock %} 
+
+{% block title %}
+  <title>Home</title> 
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../static/styles/account_manage.css">
+{% endblock %}
+
+{% block content %}
+<main>
+
+    <section class="account-details">
+        <div class="account-details-container">
+            <div class="user-img">
+                <img src="../../static/images/account.svg" alt="">
+            </div>
+            <div class="user-details">
+                <h4>{{user}}</h4>
+                <p><strong>Email: </strong> {{email}}</p>
+                <p><strong>Phone: </strong> {{phone}}</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="links-display">
+
+        <section class="account-links">
+            <div class="account-links-container">
+                <h4>My Account</h4>
+                <ul>
+                    <li><a href="{% url 'manage_account' %}">Manage Account</a></li>
+                    <li><a href="#">Notification</a></li>
+                    <li><a href="#">My Orders</a></li>
+                </ul>
+            </div>    
+        </section>
+
+        <style>
+            
+        </style>
+
+
+        <section class="display">
+            <div class="display-container">
+                <div class="heading">
+                    <h4>Notifications</h4>
+                </div>
+                <div class="manage">
+                    {% for noti in notifications %}
+                    <div class="manage-name">
+                        <div>
+                            <p><strong>{{noti.subject}}</strong></p>
+                            <p><small>{{noti.date}}</small></p>
+                            <br>
+                            <p>{{noti.message}}</p>
+                        </div>
+                        <a href="#" style="display: none;"><button>Delete</button></a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>              
+        </section>
+    </section>
+
+</main>
+
+{% endblock %}
+
+{% block scrips %} 
+<script src="../static/scripts/shop.js" type="module"></script>
+{% endblock %}

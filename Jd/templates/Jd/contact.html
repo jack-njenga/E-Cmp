@@ -1,0 +1,81 @@
+{% extends "Jd/main.html" %}
+
+{% block meta %} {% endblock %} 
+
+{% block title %}
+  <title>Contact Us</title> 
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../../static/styles/concatus.css">
+{% endblock %}
+
+{% block content %}
+
+<main>
+    
+    <section class="us">
+      <div class="heading">
+          <h2>Contact Us</h2>
+      </div>
+      <div class="us-container">
+          <div class="loaction-container">
+              <h4>Our Shop - Physical Location</h4>
+              <p>{{location}}</p>
+          </div>
+          <div class="contact-container">
+              <h4>Top-notch support</h4>
+              <p><strong>Call: </strong>{{phone}}</p>
+              <p><strong>Text/WhatsApp: </strong>{{whatsppp_phone}}</p>
+              <p><strong>Email: </strong>{{email}}</p>
+          </div>
+      </div>
+    </section>
+
+
+    <section class="map">
+      <div class="map-container">
+          <div><img src="../../static/images/our-shop.jpeg" alt=""></div>
+      </div>
+
+    </section>
+
+
+    <section class="contact-us">
+      <div class="contact-us-container">
+          <form action="">
+              <div class="address">
+                  <div class="name">
+                      <p>Name</p>
+                      <input type="text" placeholder="Dennis">
+                  </div>
+                  <div class="name">
+                      <p>Email</p>
+                      <input type="text" placeholder="...@gmail.com">
+                  </div>
+                  <div class="name">
+                      <p>Phone</p>
+                      <input type="number" placeholder="07...">
+                  </div>
+              </div>
+              <div class="message">
+                  <div class="msg">
+                      <textarea name="" id="" required cols="40" rows="7" placeholder="Say Hi"></textarea>
+                  </div>
+              </div>
+              <div class="submit-msg">
+                  <button>Submit</button>
+              </div>
+          </form>
+      </div>
+
+    </section>
+
+</main>
+
+{% endblock %}
+
+{% block scrips %} 
+<script src="../static/scripts/shop.js" type="module"></script>
+
+{% endblock %}

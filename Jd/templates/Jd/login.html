@@ -1,0 +1,98 @@
+{% extends "Jd/main.html" %}
+
+{% block meta %} {% endblock %} 
+
+{% block title %}
+  <title>Login</title> 
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../../static/styles/register.css">
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="register">
+        <div class="register-box">
+            <form id="register-form" method="post" action="#">
+                {% csrf_token %}
+                <div class="head-links" style="display: none;">
+                    <a href="#">Link1</a>
+                    <a href="#">Link2</a>
+                    <a href="#">Link3</a>
+                </div>
+                <div class="header">
+                    <h3>Sign In</h3>
+                </div>
+                <div class="inputs">
+                    <div class="email">
+                        <label for="email">Email</label>
+                        {{ form.email }}
+                        {% if errors.email %} 
+                            <div class="email-error">
+                                {{errors.email}}
+                            </div>
+                        {% endif %}                         
+                    </div>
+                    <div class="password">
+                        <label for="pwd">Password</label>
+                        {{ form.password }}
+                        {% if errors.password %} 
+                            <div class="password-error">
+                                {{errors.password}}
+                            </div>
+                        {% endif %}  
+                    </div>
+                    
+                    <div class="show-container">
+                        <span class="show" show id="show-hide">show</span>
+                    </div>
+                </div>
+                {% if messages %}
+                    <div class="messages {{message.tags}}">
+                        {% for message in messages %}
+                            <p class="messages {{message.tags}}">{{message}}</p>
+                        {% endfor %}
+                    </div>                        
+                {% endif %}
+                <div class="submit">
+                    <button type="submit">Sign In</button>
+                </div>
+                <div class="options">
+                    <div class="fogot-pwd">
+                        <a href="{% url 'foget_pwd' %}">Fogot Password</a>
+                    </div>
+                    <div class="other">
+                        <p>I actualy Don't have an account <a href="{% url 'register' %}">Register</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </section>
+    <script>
+        const pwd1 = document.querySelector('.password input');
+        const toggleButton = document.querySelector("[show]")
+        
+        toggleButton.addEventListener('click', function() {
+            for (let passwordField of [pwd1]) {
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    toggleButton.textContent = 'Hide';
+                    toggleButton.classList.add("active")
+                } else {
+                    passwordField.type = 'password';
+                    toggleButton.textContent = 'Show';
+                    toggleButton.classList.remove("active")
+                }
+            }        
+        });
+    </script>
+</main>
+
+{% endblock %}
+
+{% block scrips %} 
+<script src="../static/scripts/shop.js" type="module"></script>
+
+{% endblock %}

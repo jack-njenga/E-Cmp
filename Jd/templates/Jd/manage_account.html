@@ -1,0 +1,109 @@
+{% extends "Jd/main.html" %}
+
+{% block meta %} {% endblock %} 
+
+{% block title %}
+  <title>Home</title> 
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../static/styles/account_manage.css">
+{% endblock %}
+
+{% block content %}
+
+<main>
+    <section class="messages">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p class="messages {{message.tags}}">{{message}}</p>
+                {% endfor %}
+            </div>                        
+        {% endif %} 
+    </section>
+
+
+    <section class="account-details">
+        <div class="account-details-container">
+            <div class="user-img">
+                <img src="../../static/images/account.svg" alt="">
+            </div>
+            <div class="user-details">
+                <h4>{{user}}</h4>
+                <p><strong>Email: </strong>{{user.email}}</p>
+                <p><strong>Phone: </strong>{{user.phone_number}}</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="links-display">
+
+        <section class="account-links">
+            <div class="account-links-container">
+                <h4>My Account</h4>
+                <ul>
+                    <li><a class="active" href="#">Manage Account</a></li>
+                    <li><a href="{% url 'account_notification' %}">Notification</a></li>
+                    <li><a href="#">My Orders</a></li>
+                </ul>
+            </div>    
+        </section>
+
+
+        <section class="display">
+            <div class="display-container">
+                <div class="heading">
+                    <h4>Account Management</h4>
+                </div>
+                <div class="manage">
+                    <div class="manage-name">
+                        <div>
+                            <p><strong>Name</strong></p>
+                            <p>{{user.first_name}} {{user.last_name}} ({{user}})</p>
+                        </div>
+                        <a href="{% url 'edit_account' 'name' %}"><button>Change</button></a>
+                    </div>
+                    <div class="manage-email">
+                        <div>
+                            <p><strong>Email</strong></p>
+                            <p>{{user.email}}</p>
+                        </div>
+                        <a href="{% url 'edit_account' 'email' %}"><button>Change</button></a>
+                    </div>
+                    <div class="manage-phone-number">
+                        <div>
+                            <p><strong>Phone Number</strong></p>
+                            <p>{{user.phone_number}}</p>
+                        </div>
+                        <a href="{% url 'edit_account' 'phone_number' %}"><button>Change</button></a>                        
+                    </div>
+                    <div class="manage-password">
+                        <div>
+                            <p><strong>Password</strong></p>
+                            <p>********</p>
+                        </div>
+                        <a href="{% url 'edit_account' 'password' %}"><button>Change</button></a>
+                    </div>
+                    <div class="manage-delete">
+                        <div>
+                            <p><strong>Delete Account</strong></p>
+                            <p><strong>Warning: </strong>Delete my Account</p>
+                        </div>
+                        <a href="{% url 'edit_account' 'delete' %}"><button id="delete-account">DELETE</button></a>
+                        
+                    </div>
+                </div>
+            </div>              
+
+        </section>
+    </section>
+
+</main>
+
+{% endblock %}
+
+{% block scrips %} 
+<script src="../static/scripts/shop.js" type="module"></script>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "Jd/main.html" %}
+
+{% block meta %} {% endblock %} 
+
+{% block title %}
+  <title>About Us</title> 
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../../static/styles/aboutus.css">
+{% endblock %}
+
+{% block content %}
+
+<main>
+    <section class="us">
+      <div class="heading">
+          <h2>About Us</h2>
+      </div>
+      <div class="us-container">
+          <div class="loaction-container">
+              <h4>Our Shop - Physical Location</h4>
+              <p>{{location}}</p>
+          </div>
+          <div class="contact-container">
+              <h4>Top-notch support</h4>
+              <p><strong>Call: </strong>{{phone}}</p>
+              <p><strong>Text/WhatsApp: </strong>{{whatsppp_phone}}</p>
+              <p><strong>Email: </strong>{{email}}</p>
+          </div>
+      </div>
+    </section>
+
+    <section class="map">
+      <div class="map-container">
+          <div>
+              <img src="../static/images/us-1.jpeg" alt="">
+              <p>Lorem ipsum dolor sit</p>
+          </div>
+          <div>
+              <img src="../static/images/us-3.jpeg" alt="">
+              <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div>
+              <img src="../static/images/us-2.jpeg" alt="">
+              <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+      </div>
+
+    </section>
+
+    <section class="more-about-us">
+      <div class="more-about-us-container">
+          <h4>More About Us</h4>
+          <p>{{about_us}}</p>
+      </div>
+    </section>
+</main>
+
+{% endblock %}
+
+{% block scrips %} 
+<script src="../static/scripts/shop.js" type="module"></script>
+
+{% endblock %}

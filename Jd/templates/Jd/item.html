@@ -1,0 +1,148 @@
+{% extends "Jd/main.html" %}
+
+{% block meta %} {% endblock %} 
+
+{% block title %}
+  <title>Item</title> 
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../../static/styles/main-item.css" />
+{% endblock %}
+
+
+{% block content %}
+
+<main>
+    <section class="item-display">
+      <div class="item-container">
+        <div class="display-img">
+          <div class="item-img">
+            <img id="curr-img" src="{{ item.image.url }}" alt="">
+          </div>
+          <div class="img-list">
+            <ul class="img-list">
+              <li onclick="viewImg('{{ item.image.url }}')"><img src="{{ item.image.url }}" alt=""></li>
+
+              {% if item.image1 %}
+              <li onclick="viewImg('{{ item.image1.url }}')"><img src="{{ item.image1.url }}" alt=""></li>
+              {% endif %}
+
+              {% if item.image2 %}
+              <li onclick="viewImg('{{ item.image2.url }}')"><img src="{{ item.image2.url }}" alt=""></li>
+              {% endif %}
+
+              {% if item.image3 %}
+              <li onclick="viewImg('{{ item.image3.url }}')"><img src="{{ item.image3.url }}" alt=""></li>
+              {% endif %}
+
+              {% if item.image4 %}
+              <li onclick="viewImg('{{ item.image4.url }}')"><img src="{{ item.image4.url }}" alt=""></li>
+              {% endif %}
+
+            </ul>
+          </div>
+        </div>
+        <div class="display-info">
+          <h2 id="item-name">{{item.name}}</h2>
+          <p id="item-desc">
+            {{ item.description }}
+          </p>
+          <h4 id="item-price">{{ item.price }}</h4>
+          <div class="chat">
+            <a class="chat" href="#">
+              <img src="../static/images/whatsapp-icon.svg" alt="">
+              <p>Chat</p>
+            </a>
+          </div>
+          <div class="item-action">
+            <div class="add-to-cart">
+              <a class="add-to-cart" href="#">
+                <img src="../static/images/cart-small-icon.svg" alt="">
+                <p>Add to Cart</p>
+              </a>
+            </div>
+            <div class="buy-now">
+              <a class="buy-now" href="#">
+                <img src="../static/images/click-small-icon.svg" alt="">
+                <p>Buy Now</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="item-info">
+      <h3 class="heading">About This Item</h3>
+      <div class="item-info-container">
+        <div class="item-details">
+          <h4>Details and Dimentions</h4>
+          <ul>
+            <li>
+              <p class="detail-name">Brand</p>
+              <p class="detail-detail">{{ item.brand }}</p>
+            </li>
+            <li>
+              <p class="detail-name">Model</p>
+              <p class="detail-detail">{{ item.model }}</p>
+            </li>
+            {% if item.other %}
+            {% for key, value in item.other.items %}
+            <li>
+              <p class="detail-name">{{ key }}</p>
+              <p class="detail-detail">{{ value }}</p>
+            </li>
+            {% endfor %}
+            {% endif %}
+          </ul>
+        </div>
+        <div class="item-description">
+          <h4>Product Full Description</h4>
+          <p class="item-full-description">
+            {{ item.full_description }}
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="categories-section">
+      <div class="categories-container">
+        <span id="left-scroll"><</span>
+
+        <div class="category"><a href="#">Arduino</a></div>
+        <div class="category"><a href="#">Acceptor</a></div>
+        <div class="category"><a href="#">Boards</a></div>
+        <div class="category"><a href="#">Bluetooth Modules</a></div>
+
+        <div class="category"><a href="#">Connectors</a></div>
+        <div class="category"><a href="#">Crystals & Oscillators</a></div>
+        <div class="category"><a href="#">Digital Timer</a></div>
+        <div class="category"><a href="#">Displays</a></div>
+        <div class="category"><a href="#">Motors</a></div>
+        <div class="category"><a href="#">MP3 Modules</a></div>
+        <div class="category"><a href="#">Sensors</a></div>
+        <div class="category"><a href="#">Potentiometers</a></div>
+        <div class="category"><a href="#">Thermoelectric Modules</a></div>
+        <div class="category"><a href="#">Solenoid Valve</a></div>
+        <div class="category"><a href="#">Raspberry Pi</a></div>
+        <div class="category"><a href="#">Water Flow Sensors</a></div>
+        <div class="category"><a href="#">
+          Wifi Modules</a></div>
+        <div class="category"><a href="#">Water Pump</a></div>
+        <div class="category"><a href="#">Water Float Sensors</a></div>
+        <div class="category"><a href="#">
+          Water Flow Sensors</a></div>
+        <div class="category"><a href="#">Wires and Cables</a></div>
+        <div class="category"><a href="#">XBEE Modules</a></div>
+        <span id="right-scroll">></span>
+      </div>
+    </section>
+</main>
+
+{% endblock %} 
+
+{% block scripts %}
+<script src="../static/scripts/main.js"></script>
+{% endblock %}

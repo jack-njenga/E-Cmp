@@ -1,0 +1,232 @@
+/* section.register * {
+    border: 1px solid gray;
+} */
+
+
+section.register {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#register-form {
+    min-height: 350px;    
+    border: var(--border-global);
+    border-radius: 5px;
+    padding: 10px;
+    background: var(--form-gradient);
+    backdrop-filter: blur(3px);
+}
+#register-form :is(h1, h2, h3, h4, h5, h6, p) {
+    padding: 0px;
+    margin: 0px;
+}
+.head-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.head-links a {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    padding: 3px 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 1px 5px;
+}
+.header {
+    text-align: center;
+    color: rgb(0, 102, 0);
+    padding: 10px 0px;
+    padding-top: 20px;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+.inputs > div {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+.inputs > div :is(label) {
+    padding: 1px 10px;
+    color: black;
+    font-size: 18px;
+}
+.inputs > div :is(input) {
+    padding: 10px 10px;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 10px;
+    min-width: 400px;
+    font-size: 18px;
+}
+
+#show-hide {
+    min-width:  70px;
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: var(--border-global);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all var(--transition-time);
+    text-align: center;   
+}
+#show-hide:hover {
+    box-shadow: var(--hover-shadow);
+}
+span.show {
+    background-color: var(--input-bg-clr);
+}
+span.show.active {
+    background-color: var(--header-btn-hover-clr);
+}
+
+.inputs > div div.error {
+    padding: 0px 10px;
+    color: red;
+    font-style: italic;
+}
+div.messages {
+    max-width: 400px;
+    padding: 10px 20px;
+    border-top: 1px solid rgb(184, 184, 184);
+    border-bottom: 1px solid rgb(184, 184, 184);
+    text-align: center;
+}
+.messages.error {
+    color: red;
+    padding: 0px;
+    margin: 0px;
+}
+.messages.success {
+    color: green;
+}
+.messages :is(ul, li, a, p) {
+    list-style: none;
+    text-decoration: none;
+    font-style: italic;
+    font-size: small;
+    font-weight: bold;
+}
+.inputs > div > div :is(ul, li, a, p) {
+    list-style: none;
+    text-decoration: none;
+    color: rgb(228, 0, 0);
+    margin: 0px;
+    font-style: italic;
+    font-size: small;
+    font-weight: bold;
+}
+
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px 5px;
+}
+.submit button {
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--btn-clr);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 17px;
+    transition: all var(--transition-time);
+}
+.submit button:hover {
+    background-color: var(--btn-clr-hover);
+    color: rgb(255, 255, 255);
+    box-shadow: var(--hover-shadow);
+}
+.options {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+.options p {
+    font-size: small;
+}
+.options a {
+    transition: all 0.3s;
+}
+.fogot-pwd a {
+    padding: 0px 10px;
+    border: var(--border-global);
+    border-radius: 5px;
+    background-color: var(--input-bg-clr);
+    text-decoration: none;
+    color: black;
+    font-size: small;
+}
+.other a {
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0); 
+    color: white;
+}
+.options a:hover {
+    color: red;
+    box-shadow: 0px 3px 5px black;
+}
+
+.submit button.delete {
+    background-color: var(--delete-btn-clr);
+    color: red;
+    transition: all 0.5;
+}
+.submit button.cancel {
+    background-color: var(--input-bg-clr);
+    color: black;
+    border: var(--border-global);
+}
+.submit button.cancel:hover {
+    background-color: var(--header-btn-hover-clr);
+}
+.submit button.delete:hover {
+    background-color: var(--delete-btn-clr-hover);
+    color: red;
+}
+
+.other {
+    max-width: 400px;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    #register-form {
+        width: 100%;
+    }
+    .inputs > div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;    
+    }
+    .inputs > div :is(input) {
+        min-width: 300px;
+    }
+    div.messages {
+        max-width: 300px;
+    }
+    .options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+        gap: 20px;
+    }
+    .other {
+        max-width: 300px;
+    }
+}

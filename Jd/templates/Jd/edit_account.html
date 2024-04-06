@@ -1,0 +1,159 @@
+{% extends "Jd/main.html" %}
+
+{% block meta %} {% endblock %} 
+
+{% block title %}
+  <title>Register</title> 
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../../static/styles/register.css">
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="register">
+        <div class="register-box">
+            <form id="register-form" method="post" action="#">
+                {% csrf_token %}
+                <div class="head-links" style="display: none;">
+                    <a href="#">Link1</a>
+                    <a href="#">Link2</a>
+                    <a href="#">Link3</a>
+                </div>
+                <div class="header">
+                    {% if "delete" in table.lower %}
+                        <h3 style="color: red;">Delete Account !</h3>
+                    {% else %}
+                        <h3>Update {{table}}</h3>
+                    {% endif %}
+                </div>
+                <div class="inputs">
+                    {% if "name" in table.lower %}
+                        <div class="{{table}}">
+                            <label for="{{table}}">New First Name</label>
+                            <input required type="text" name="first_name" placeholder="{{user.first_name}}">
+                            {% if errors %} 
+                                <div class="name-error">
+                                    {{errors}}
+                                </div>
+                            {% endif %}                         
+                        </div>
+                        <div class="{{table}}">
+                            <label for="{{table}}">New Last Name</label>
+                            <input required type="text" name="last_name" placeholder="{{user.last_name}}">
+                            {% if errors %} 
+                                <div class="name-error">
+                                    {{errors}}
+                                </div>
+                            {% endif %}                         
+                        </div>
+                        <div class="{{table}}">
+                            <label for="{{table}}">Username</label>
+                            <input required type="text" name="username" placeholder="{{user.username}}">
+                            {% if errors %} 
+                                <div class="name-error">
+                                    {{errors}}
+                                </div>
+                            {% endif %}                         
+                        </div>                     
+                    {% elif "phone" in table.lower %}
+                        <div class="{{table}}">
+                            <label for="{{table}}">New Phone Number</label>
+                            <input required type="number" name="phone_number" placeholder="{{user.phone_number}}">
+                            {% if errors %}
+                                <div class="email-error">
+                                    {{errors}}
+                                </div>
+                            {% endif %}                         
+                        </div>
+                    {% elif "email" in table.lower %}
+                        <div class="{{table}}">
+                            <label for="{{table}}">New Email</label>
+                            <input required type="email" name="email" placeholder="{{user.email}}" >
+                            {% if errors %} 
+                                <div class="email-error">
+                                    {{errors}}
+                                </div>
+                            {% endif %}                         
+                        </div>
+                    {% elif "password" in table.lower %}
+                        <div class="{{table}}">
+                            <label for="{{table}}">New Password</label>
+                            <input required type="password" name="password" >
+                            {% if errors %} 
+                                <div class="password-error">
+                                    {{errors}}
+                                </div>
+                            {% endif %}                         
+                        </div>
+                        <div class="show-container">
+                            <span class="show" show id="show-hide">show</span>
+                        </div>
+                    {% elif "delete" in table.lower %}
+                        <div class="{{table}}">
+                            <label for="{{table}}">Please Type '{{delete_keyword}}' to continue</label>
+                            <input required type="text" name="delete" placeholder="{{delete_keyword}}">
+                            {% if errors %}
+                                <div class="email-error">
+                                    {{errors}}
+                                </div>
+                            {% endif %}                         
+                        </div>
+                    {% endif %}
+                </div>
+                {% if messages %}
+                    <div class="messages" >
+                        {% for message in messages %}
+                            <p class="messages {{message.tags}}">{{message}}</p>
+                        {% endfor %}
+                        {{errors}}
+                    </div>                        
+                {% endif %}
+                <div class="submit">
+                    <a href="{% url 'manage_account' %}"><button class="cancel" type="button">Cancel</button></a>
+                    {% if "delete" in table.lower %}
+                        <button class="delete" type="submit">DELETE</button>
+                    {% else %}
+                        <button type="submit">Update</button>
+                    {% endif %}                    
+                </div>
+                <div class="options">
+                    <div class="other">
+                        {% if "delete" in table.lower %}
+                            <p style="color: red;"><strong>Warning! Are you sure you want to delete your account</strong></p>
+                        {% else %}
+                            <p>.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </section>
+    <script>
+        const pwd = document.querySelector('.password input');
+        const toggleButton = document.querySelector("[show]")
+        
+        toggleButton.addEventListener('click', function() {
+            for (let passwordField of [pwd]) {
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    toggleButton.textContent = 'Hide';
+                    toggleButton.classList.add("active")
+                } else {
+                    passwordField.type = 'password';
+                    toggleButton.textContent = 'Show';
+                    toggleButton.classList.remove("active")
+                }
+            }        
+        });
+    </script>
+</main>
+
+{% endblock %}
+
+{% block scrips %} 
+<script src="../static/scripts/shop.js" type="module"></script>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block meta %} {% endblock %} {% block title %}
+    <title>Main JD Template</title>
+    {% endblock %}
+    <link rel="stylesheet" href="../../static/styles/common.css" />
+    <link rel="stylesheet" href="../../static/styles/header.css" />
+
+    {% block extra_css %} {% endblock %}
+
+    <link rel="stylesheet" href="../../static/styles/footer.css" />
+  </head>
+  <body>
+    <!-- header -->
+    {% include "Jd/header.html" %}
+
+    <!-- main -->
+    {% block content %}
+    <style>
+      main {
+        padding: 200px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: blue;
+      }
+    </style>
+
+    <main>
+      <div>
+        <h1>Main template is working</h1>
+      </div>
+    </main>
+
+    {% endblock %}
+
+    <!-- footer -->
+    {% include "Jd/footer.html" %}
+  </body>
+  <script src="../../static/scripts/header.js" type="module"></script>
+  <!-- <script src="../static/scripts/app.js" type="module"></script> -->
+  <!-- <script src="../build/bundle.js"></script> -->
+  {% block scripts %} {% endblock %}
+</html>

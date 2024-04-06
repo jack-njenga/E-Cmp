@@ -1,0 +1,280 @@
+{% extends "Jd/main.html" %}
+
+{% block meta %} {% endblock %} 
+
+{% block title %}
+  <title>Home</title> 
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../static/styles/main.css" />
+{% endblock %}
+
+{% block content %}
+<main>
+  <section class="messages">
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <p class="messages {{message.tags}}">{{message}}</p>
+            {% endfor %}
+        </div>                        
+    {% endif %} 
+  </section>
+  <section class="ad">
+    <div class="ad-text">
+      <h3>Our Collection</h3>
+    </div>
+    <div class="ad">
+      <div class="adv">
+        <img src="../static/images/capacitors-2.jpg" alt="" />
+        <p>Capasitors</p>
+      </div>
+      <div class="adv">
+        <img src="../static/images/processors.jpg" alt="" />
+        <p>Processors</p>
+      </div>
+      <div class="adv">
+        <img src="../static/images/resistors-2.jpg" alt="" />
+        <p>Resistors</p>
+      </div>
+      <div class="adv">
+        <img src="../static/images/voltage-regulator-1.jpg" alt="" />
+        <p>Voltage Regulators</p>
+      </div>
+      <div class="adv">
+        <img src="../static/images/switches.jpg" alt="" />
+        <p>Switches</p>
+      </div>
+      <div class="adv">
+        <img src="../static/images/capacitors-3.jpg" alt="" />
+        <p>Capacitors</p>
+      </div>
+      <div class="adv">
+        <img src="../static/images/thermal-fuse.jpg" alt="" />
+        <p>Thermal Fuse</p>
+      </div>
+      <div class="adv">
+        <img src="../static/images/transistor-2.jpeg" alt="" />
+        <p>Transistors</p>
+      </div>
+      <div class="adv">
+        <img src="../static/images/voltage-regulator-3.jpg" alt="" />
+        <p>Regulators</p>
+      </div>
+      <div class="adv">
+        <img src="../static/images/resistors-1.jpg" alt="" />
+        <p>Resistors</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="values-heading">
+      <h3>Our Values</h3>
+      <br />
+    </div>
+
+    <div class="our-values">
+      <div class="money-back">
+        <img src="../static/images/money-back.svg" alt="" />
+        <p>100% Money Back Gaurantee</p>
+      </div>
+      <span></span>
+      <div class="delivery">
+        <img src="../static/images/delivery-icon.svg" alt="" />
+        <p>Efficient and Low Cost delivery</p>
+      </div>
+      <span></span>
+      <div class="secure-payments">
+        <img src="../static/images/secure-payments.svg" alt="" />
+        <p>Secure Payments</p>
+      </div>
+    </div>
+  </section>
+  <section class="our-products">
+    <div class="our-products-heading">
+      <h3>Our Products</h3>
+    </div>
+    <div class="our-products-container">
+      <div>
+        <img src="../static/images/electronic_components.jpg" alt="" />
+        <div id="electronic_components-first">
+          <h3></h3>
+          <p>Electronic Components</p>
+          <h2 id="scroll-next">>></h2>
+        </div>
+      </div>
+      <span></span>
+      <div>
+        <img src="../static/images/electronic_devices.jpg" alt="" />
+        <p>Electronic Devices</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- category scroll -->
+  <section class="categories-section">
+    <div class="categories-container">
+      <span id="left-scroll"><</span>
+
+      <div class="category"><a href="#">Arduino</a></div>
+      <div class="category"><a href="#">Acceptor</a></div>
+      <div class="category"><a href="#">Boards</a></div>
+      <div class="category"><a href="#">Bluetooth Modules</a></div>
+
+      <div class="category"><a href="#">Connectors</a></div>
+      <div class="category"><a href="#">Crystals & Oscillators</a></div>
+      <div class="category"><a href="#">Digital Timer</a></div>
+      <div class="category"><a href="#">Displays</a></div>
+      <div class="category"><a href="#">Motors</a></div>
+      <div class="category"><a href="#">MP3 Modules</a></div>
+      <div class="category"><a href="#">Sensors</a></div>
+      <div class="category"><a href="#">Potentiometers</a></div>
+      <div class="category"><a href="#">Thermoelectric Modules</a></div>
+      <div class="category"><a href="#">Solenoid Valve</a></div>
+      <div class="category"><a href="#">Raspberry Pi</a></div>
+      <div class="category"><a href="#">Water Flow Sensors</a></div>
+      <div class="category"><a href="#"> Wifi Modules</a></div>
+      <div class="category"><a href="#">Water Pump</a></div>
+      <div class="category"><a href="#">Water Float Sensors</a></div>
+      <div class="category"><a href="#"> Water Flow Sensors</a></div>
+      <div class="category"><a href="#">Wires and Cables</a></div>
+      <div class="category"><a href="#">XBEE Modules</a></div>
+      <span id="right-scroll">></span>
+    </div>
+  </section>
+
+  <section class="price-filter">
+    <div class="price-filter">
+      <form action="">
+        <div class="price-filter-heading">
+          <p>Price Filter</p>
+        </div>
+        <div class="filter">
+          <div class="min-price">
+            <input type="number" min-price placeholder="0" required />
+          </div>
+          <span>-</span>
+          <div class="max-price">
+            <input type="number" max-price placeholder="50000" required />
+          </div>
+          <span></span>
+          <div class="apply-filter">
+            <button type="submit" apply-price>Apply</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="products-heading">
+      <h3>Components</h3>
+    </div>
+    <div class="components" items-container>
+      <div class="product">
+        <a class="product-link" href="http://192.168.100.70:5001/item">
+          <img
+            class="product-img"
+            src="../static/images/audio-sensor.jpg"
+            alt=""
+          />
+          <h4 class="product-name">Audio Sensor</h4>
+          <p class="product-description">High Sensitivity Sound</p>
+          <h4 class="product-price" item-price>Ksh 1,100</h4>
+        </a>
+        <div class="product-action">
+          <a class="buy-now" href="#">
+            <img src="../static/images/click.svg" alt="" />
+            <p>Buy Now</p>
+          </a>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product">
+        <a class="product-link" href="#">
+          <img
+            class="product-img"
+            src="../static/images/voltage-regulator-2.jpg"
+            alt=""
+          />
+          <h4 class="product-name">Voltage Regulator</h4>
+          <p class="product-description">
+            High Sensitivity Sound Microphone Sensor Detection Module for
+            Arduino AVR PIC
+          </p>
+          <h4 class="product-price" item-price>Ksh 1,100</h4>
+        </a>
+        <div class="product-action">
+          <a class="buy-now" href="#">
+            <img src="../static/images/click.svg" alt="" />
+            <p>Buy Now</p>
+          </a>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product">
+        <a class="product-link" href="#">
+          <img
+            class="product-img"
+            src="../static/images/audio-sensor.jpg"
+            alt=""
+          />
+          <h4 class="product-name">Audio Sensor</h4>
+          <p class="product-description">
+            High Sensitivity Sound Microphone Sensor Detection Module for
+            Arduino AVR PIC High Sensitivity Sound Microphone Sensor Detection
+            Module for Arduino AVR PIC
+          </p>
+          <h4 class="product-price" item-price>Ksh 1,100</h4>
+        </a>
+        <div class="product-action">
+          <a class="buy-now" href="#">
+            <img src="../static/images/click.svg" alt="" />
+            <p>Buy Now</p>
+          </a>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product">
+        <a class="product-link" href="#">
+          <img
+            class="product-img"
+            src="../static/images/audio-sensor.jpg"
+            alt=""
+          />
+          <h4 class="product-name">Audio Sensor</h4>
+          <p class="product-description">
+            High Sensitivity Sound Microphone Sensor Detection Module for
+            Arduino AVR PIC High Sensitivity Sound Microphone Sensor Detection
+            Module for Arduino AVR PIC
+          </p>
+          <h4 class="product-price" item-price>Ksh 1,100</h4>
+        </a>
+        <div class="product-action">
+          <a class="buy-now" href="#">
+            <img src="../static/images/click.svg" alt="" />
+            <p>Buy Now</p>
+          </a>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+      <!-- add more products here -->
+    </div>
+  </section>
+
+  <section class="pagination">      
+    <div class="pages">
+      <button>
+        <a href="#">Show More</a>
+      </button>        
+    </div>
+  </section>
+  
+</main>
+{% endblock %} 
+
+{% block scrips %}
+<script src="../static/scripts/shop.js" type="module"></script>
+{% endblock %}

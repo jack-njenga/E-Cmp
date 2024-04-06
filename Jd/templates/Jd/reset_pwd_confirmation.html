@@ -1,0 +1,64 @@
+{% extends "Jd/main.html" %}
+
+{% block meta %} {% endblock %} 
+
+{% block title %}
+  <title>Login</title> 
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../../static/styles/register.css">
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="register">
+        <div class="register-box">
+            <form id="register-form" method="post" action="#">
+                {% csrf_token %}
+                <div class="head-links" style="display: none;">
+                    <a href="#">Link1</a>
+                    <a href="#">Link2</a>
+                    <a href="#">Link3</a>
+                </div>
+                <div class="header">
+                    <h3>Password Reset Confirmation</h3>
+                </div>
+                {% if messages %}
+                    <div class="messages {{message.tags}}">
+                        {% for message in messages %}
+                            <p class="messages {{message.tags}}">{{message}}</p>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="messages info">
+                        <p class="messages info">There are no current messages try siging to see if the changes have been applyied</p>
+                    </div>                   
+                {% endif %}
+                {% if not reset %}
+                    <div class="submit">
+                        <a href="{% url 'login' %}"><button class="cancel" type="button">Back</button></a>
+                    </div>
+                {% else %}
+                    <div class="submit">                        
+                        <a href="{% url 'login' %}"><button class="cancel" type="button">Sign In Now</button></a>
+                    </div>
+                {% endif %}
+                <div class="options">
+                    <div class="other">
+                        <p>This is a confirmation of your password reset</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </section>
+    
+</main>
+
+{% endblock %}
+
+{% block scrips %} 
+<script src="../static/scripts/shop.js" type="module"></script>
+
+{% endblock %}

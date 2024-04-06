@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/styles/register.css">
+</head>
+<body>
+
+    <style>
+        *, *::after, *::before {
+            box-sizing: border-box;
+            border: 0;
+            padding: 0;
+        }
+        main {
+            padding: 50px;
+        }
+        main > h1 {
+            text-align: center;
+        }
+    </style>
+
+    <main>
+        <h1>Register Card</h1>
+
+        <section class="register">
+            <div class="register-box">
+                <form id="register-form" action="#">
+                    <div class="head-links" style="display: none;">
+                        <a href="#">Link1</a>
+                        <a href="#">Link2</a>
+                        <a href="#">Link3</a>
+                    </div>
+                    <div class="header">
+                        <h3>Create An Account</h3>
+                    </div>
+                    <div class="inputs">
+                        <div class="email">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="">
+                            <div class="email error">
+                                <p>Email is not a valid email</p>
+                            </div>
+                        </div>
+                        <div class="password1">
+                            <label for="pwd1">Password</label>
+                            <input type="password" pwd-input name="password">
+                            <div class="email success">
+                                <p>Email is not a valid email</p>
+                            </div>
+                        </div>
+                        <div class="password2">
+                            <label for="pwd2">Confirm Password</label>
+                            <input type="password" pwd-input name="password2" id="">
+                        </div>
+                        <div class="show-container">
+                            <span class="show" show id="show-hide">show</span>
+                        </div>
+                    </div>
+                    <div class="all-errors">
+                        <h4 class="error-header">Errors</h4>
+                        <ul>
+                            <li><p>Email is required</p></li>
+                            <li><p>Email is required</p></li>
+                            <li><p>Email is required</p></li>
+                        </ul>
+                    </div>
+                    <div class="submit">
+                        <button type="submit">Register</button>
+                    </div>
+                    <div class="options">
+                        <div class="fogot-pwd">
+                            <a href="#">Fogot Password</a>
+                        </div>
+                        <div class="other">
+                            <p>I actualy have an account <a href="#">Sign In</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+        <img src="../../static/images/register.jpg" alt="">
+    </main>
+    
+</body>
+
+<script>
+    const passwordFields = document.querySelectorAll("[pwd-input]")
+    const toggleButton = document.querySelector("[show]")
+    
+    toggleButton.addEventListener('click', function() {
+        for (let passwordField of passwordFields) {
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleButton.textContent = 'Hide';
+                toggleButton.classList.add("active")
+            } else {
+                passwordField.type = 'password';
+                toggleButton.textContent = 'Show';
+                toggleButton.classList.remove("active")
+            }
+        }        
+    });
+</script>
+</html>

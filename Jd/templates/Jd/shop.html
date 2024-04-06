@@ -1,0 +1,105 @@
+{% extends "Jd/main.html" %}
+
+{% block meta %} {% endblock %} 
+
+{% block title %}
+  <title>Home</title> 
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../../static/styles/shop.css" />
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="messages">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p class="messages {{message.tags}}">{{message}}</p>
+                {% endfor %}
+            </div>                        
+        {% endif %} 
+    </section>
+    <section class="price-filter">
+      <div class="price-filter">
+        <form action="">
+          <div class="price-filter-heading">
+            <p><small>Price filter</small></p>
+          </div>
+          <div class="filter">
+            <div class="min-price">
+              <input type="number" min-price placeholder=0 required>
+            </div>
+            <span>-</span>
+            <div class="max-price">
+              <input type="number" max-price placeholder=50000 required>
+            </div>
+            <div class="apply-filter">
+              <button type="submit" apply-price>Apply</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="products">
+      <div class="products-heading">
+        <!-- <h3>Components</h3> -->
+      </div>
+      <div class="components" items-container>
+
+        {% for item in items %}
+
+        <div class="product">
+          <a class="product-link" href="{% url 'item' item.id %}">
+            <img class="product-img" src="{{item.image.url}}" alt="">
+            <h4 class="product-name">{{item.name}}</h4>
+            <p class="product-description">{{ item.description }}</p>
+            <h4 class="product-price" item-price>{{item.price}}</h4>
+          </a>
+          <div class="product-action">
+            <a class="buy-now" href="#" style="display: none;">
+              <img src="../static/images/click.svg" alt="">
+              <p>Buy Now</p>
+            </a>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+        {% endfor %}
+
+
+        <div class="product">
+          <a class="product-link" href="{% url 'item' 'a123' %}">
+            <img class="product-img" src="../../static/images/audio-sensor.jpg" alt="">
+            <h4 class="product-name">Audio Sensor</h4>
+            <p class="product-description">High Sensitivity Sound</p>
+            <h4 class="product-price" item-price>Ksh 1,100</h4>
+          </a>
+          <div class="product-action">
+            <a class="buy-now" href="#">
+              <img src="../static/images/click.svg" alt="">
+              <p>Buy Now</p>
+            </a>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="pagination">      
+      <div class="pages">
+        <button>
+          <a href="#">Show More</a>
+        </button>        
+      </div>
+    </section>
+</main>
+
+{% endblock %} 
+
+{% block scripts %}
+<script src="../static/scripts/shop.js" type="module"></script>
+{% endblock %}
